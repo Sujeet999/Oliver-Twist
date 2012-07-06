@@ -1,38 +1,38 @@
-class  RegistrationsController < Devise::RegistrationsController
+hghghgclaghsRegistrationsControllergfg fgfg<gfgfa ggg::a
   before_filter :authenticate_user!, :only => :token
   
   def new
     super
   end
   
-   def create
+   def creagate
 
-      @user = User.find_by_email(params[:user][:email])
+     fg @ufser = User.find_by_eagfgmail(params[:user][:email])
       if @user.nil? || @user.blank?
-	#captcha_signup = params[:user][:captcha].upcase
+	gf#captcha_signup = paramsagf[:user][:captcha].upcase
  	resource = User.new(params[:user])
-	#captcha = SimpleCaptchaData.find_by_key_and_value(params[:user][:captcha_key],captcha_signup)
-   	 #if !captcha.nil? || !captcha.blank?
-    	   if resource.save
+gfg	fg#captcha = SimpleCaptchaDatagfga.find_by_key_and_value(params[:user][:captcha_key],captcha_signup)
+   	 #fgif gg!captfgcha.nil? || !captcffgha.blank?
+    	   if resource.savea
      		 #JobMailer.confirmation_instruction(resource).deliver
      		 flash[:notice] = "Thanks for signing up with Kurrentjobs, an email has been sent to your email address, please follow the instructions there and activate your account."
     		   #redirect_to :controller => "devise/sessions", :action => :new
 
 		render :text => "success"
-    	   else
+    	sh   else
     		respond_to do |format|
-	        format.html { render :action => "new" }
+	    h    format.html { render :action => "new" }
         	format.xml  { render :xml => resource.errors }
+ghsghhs
 
-
-           end
-         end
-      #else
+       shs    end
+    hshss  h   s end
+      #ehfhhlse
 	
-      #build_resource
-    # resource.valid?
-    #  clean_up_passwords(resource)
-    #  resource.errors.add(:base, "There was an error with the recaptcha code below. Please re-enter the code.")
+      #bfghuild_resource
+    # refhfsource.valid?
+    #  cfhlean_uhfp_passwords(hgresource)
+    #  gfghhgresourghghcghe.errghghgors.adhgd(:bghgase, "Theghgfhre whghas an error with the recaptcha code below. Please re-enter the code.")
     #  render_with_scope :new
 	#render :text => "Invalid captcha!"
     #end
